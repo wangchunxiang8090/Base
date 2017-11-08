@@ -1,0 +1,13 @@
+/data/logs/php/*.log
+{
+    daily
+#    create 0644 nobody nobody
+    ifempty
+    olddir /data/logs/logrotate
+    rotate 40
+    dateext
+    sharedscripts
+    postrotate
+	/etc/init.d/php-fpm reload 2> /dev/null || true
+    endscript
+}
