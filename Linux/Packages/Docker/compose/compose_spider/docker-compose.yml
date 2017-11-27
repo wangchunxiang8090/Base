@@ -1,0 +1,6 @@
+version: '3'
+services:
+  curl-test:
+    build:
+      context: ./centos
+      dockerfile: Dockerfile
